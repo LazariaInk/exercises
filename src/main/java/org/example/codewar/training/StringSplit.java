@@ -1,4 +1,4 @@
-package org.example.codewar;
+package org.example.codewar.training;
 
 
 /*

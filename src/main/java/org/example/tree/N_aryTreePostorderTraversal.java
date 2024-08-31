@@ -29,7 +29,7 @@ public class N_aryTreePostorderTraversal {
         int index = 0;
         while(index < allValuesFromNode.size()){
             Node currentNode = allValuesFromNode.get(index);
-            System.out.println(currentNode.val);
+            System.out.print(currentNode.val+ " ");
             if(currentNode.children != null) {
                 allValuesFromNode.addAll(currentNode.children);
             }
