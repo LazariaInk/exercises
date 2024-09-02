@@ -16,23 +16,24 @@ the missing second character of the final pair with an underscore ('_').
 public class StringSplit {
 
     public static void main(String[] args) {
-        solution("asd3");
+        for(String s : solution("mamaa")){
+            System.out.print(s + " ");
+        }
     }
 
     public static String[] solution(String s) {
-        int length = (s.length() + 1) / 2;
-        int indexOfPairs = 0;
-
-        String[] pairs = new String[length];
-
-        for (int i = 0; i < s.length(); i += 2) {
-            if(i+1 <s.length()){
-                pairs[indexOfPairs] = s.substring(i,i+2);
-            } else {
-                pairs[indexOfPairs] = s.charAt(i) + "_";
-            }
+        int length = s.length();
+        int arrayLength = (length + 1) / 2;
+        String[] arrayOFStrings = new String[arrayLength];
+        int indexOfArrayOfStrings = 0;
+        if (length % 2 != 0) {
+            s = s + "_";
         }
-        return pairs;
+        for (int i = 0; i < s.length(); i += 2) {
+            arrayOFStrings[indexOfArrayOfStrings] = s.substring(i, i + 2);
+            indexOfArrayOfStrings++;
+        }
+        return arrayOFStrings;
     }
 }
 
