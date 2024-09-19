@@ -30,20 +30,38 @@ public class XOGameCheck {
         return 0;
     }
 
-    public static int checkFirstDiagonal(int[][] board){
-        boolean isEquals = false;
-        for(int i = 0; i < board.length-1; i ++) {
-           if(board[i][i] ==board[i+1][i+1]) {
-               isEquals = true;
-           } else {
-               isEquals = false;
-               break;
-           }
+    public static int checkFirstDiagonal(int[][] board) {
+        boolean isEquals = true;
+        int n = board.length;
+        for (int i = 0; i < n - 1; i++) {
+            if (board[i][i] != board[i + 1][i + 1]) {
+                isEquals = false;
+                break;
+            }
         }
-        if(isEquals){
+        if (isEquals) {
             return board[0][0];
         } else {
-            return  -1;
+            return -1;
+        }
+    }
+
+
+    public static int checkSecondDiagonal(int[][] board) {
+        boolean isEquals = true;
+        int n = board.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            if (board[i][n - i - 1] != board[i + 1][n - i - 2]) {
+                isEquals = false;
+                break;
+            }
+        }
+
+        if (isEquals) {
+            return board[0][n - 1];
+        } else {
+            return -1;
         }
     }
 }
